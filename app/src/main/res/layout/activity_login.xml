@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:background="#FFFFFF">
+
+    <!-- Encabezado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:background="#2EE8A2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/flecha" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="0.9" />
+
+
+
+        <TextView
+            android:id="@+id/text_bienvenida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iniciar Sesion"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+
+
+
+
+
+    </LinearLayout>
+
+    <!-- Espacio -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <!-- Usuario -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usuario"
+        app:boxStrokeColor="#4CAF50"
+        app:boxStrokeWidth="2dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_field"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:text="alejing@gmail.com"
+            android:layout_gravity="center_horizontal"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Espacio -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="33dp" />
+
+    <!-- Contraseña -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        app:boxStrokeColor="#50E3C2"
+        app:boxStrokeWidth="2dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_field"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:text="****************"
+            android:layout_gravity="center_horizontal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Espacio -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar sesión"
+        android:textColor="@android:color/black"
+        android:backgroundTint="#2EE8A2"
+        android:paddingLeft="30dp"
+        android:paddingTop="12dp"
+        android:paddingRight="24dp"
+        android:paddingBottom="12dp"
+        android:layout_gravity="center_horizontal" />
+
+
+
+</LinearLayout>

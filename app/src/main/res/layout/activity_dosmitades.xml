@@ -1,0 +1,225 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/rootLayout" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@android:color/white" tools:context=".DosPalabrasActivity">
+
+    <!-- Encabezado (barra superior) -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#2EE8A2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="0.9" />
+
+        <TextView
+            android:id="@+id/text_bienvenida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dos Mitades"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/salida_olvido2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/x" />
+    </LinearLayout>
+
+    <!-- Saludo -->
+    <TextView
+        android:id="@+id/saludo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola alejing@gmail.com"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:paddingStart="16dp"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Instrucciones -->
+    <TextView
+        android:id="@+id/instrucciones"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Te voy a ayudar a solucionar el problema de las 2 palabras.\n\n1. Ingresa una cadena de caracteres.\n\n2.Te ayudare a cortar la cadena en dos partes 'iguales' (si la longitud de la cadena es impar, colocare el carácter central en la primera cadena, de modo que la primera cadena contenga un carácter más que la segunda).\n\n3.Luego imprimiré la nueva cadena en una sola fila con la primera y la segunda mitad intercambiadas (la segunda mitad es la primera y la primera mitad es la segunda)"
+        android:textSize="14sp"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/saludo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Campo de entrada de texto -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/inputTexto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Ingresa una cadena de caracteres"
+        app:boxStrokeColor="#4CAF50"
+        app:boxStrokeWidth="2dp"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@id/instrucciones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:text="hello"
+            android:layout_gravity="center_horizontal"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón para procesar -->
+    <Button
+        android:id="@+id/btnProcesar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Procesar"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        app:layout_constraintTop_toBottomOf="@id/inputTexto"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Resultado:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/btnProcesar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textoError"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ups! algo salió mal revisa tu cadena."
+        android:textColor="@android:color/holo_red_dark"
+        android:visibility="gone"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/resultado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- Barra inferior personalizada -->
+    <!-- Barra inferior personalizada con íconos -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#2EE8A2"
+        android:gravity="center"
+        android:paddingVertical="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Item 1 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/diagrama"
+                android:contentDescription="Dos mitades" />
+
+            <TextView
+                android:id="@+id/nav_item_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dos mitades"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Item 2 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/menu"
+                android:contentDescription="Dos palabras" />
+
+            <TextView
+                android:id="@+id/nav_item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dos palabras"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Item 3 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/abc"
+                android:contentDescription="Quitar fragmento" />
+
+            <TextView
+                android:id="@+id/nav_item_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quitar fragmento"
+                android:textColor="@android:color/black"
+                android:textSize="12sp"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
